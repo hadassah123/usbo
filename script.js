@@ -59,11 +59,11 @@ function getAgentReply(message) {
   const lowerValue = message.toLowerCase();
 
   if (lowerValue.includes('balance')) {
-    return 'Your available balance is $24,825.00 and $1,240.00 is currently on hold.';
+    return 'Your available balance is $7,000,000.00 and $1,250,000.00 is currently on hold.';
   }
 
   if (lowerValue.includes('hold')) {
-    return 'The hold amount is $1,240.00 and it is still under review by our support team.';
+    return 'The hold amount is $1,250,000.00 and it is still under review by our support team.';
   }
 
   if (lowerValue.includes('transfer') || lowerValue.includes('add money')) {
@@ -71,7 +71,7 @@ function getAgentReply(message) {
   }
 
   if (lowerValue.includes('hello') || lowerValue.includes('hi')) {
-    return 'Hello! I can help with your balance, hold status, and account support questions.';
+    return 'Hello Alex! I can help with your balance, hold status, and account support questions.';
   }
 
   return 'Thanks for contacting USBSO support. A team member will follow up soon.';
