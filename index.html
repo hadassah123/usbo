@@ -8,47 +8,27 @@
   </head>
   <body>
     <div class="app-shell">
-      <section id="loginView" class="screen active" aria-label="Login screen">
-        <div class="login-card">
-          <div class="brand-block logo-block">
-            <div class="brand-logo" aria-label="USBSO logo">
-              <span class="brand-shape">US</span>
-              <span class="brand-word">BSO</span>
-              <span class="brand-reg">®</span>
-            </div>
-          </div>
-
-          <form id="loginForm" class="login-form">
-            <label>
-              <span>Username</span>
-              <input type="text" id="username" value="alex.dimarco" />
-            </label>
-
-            <label>
-              <span>Password</span>
-              <input type="password" id="password" value="123456" />
-            </label>
-
-            <button type="submit" class="login-button">Login</button>
-          </form>
-        </div>
-      </section>
-
-      <main id="dashboardView" class="screen dashboard" aria-label="Dashboard">
+      <main id="dashboardView" class="dashboard active" aria-label="Dashboard">
         <header class="topbar">
           <div class="brand-mini" aria-label="USBSO logo">
             <span class="brand-mini-mark">US</span>
             <span class="mini-word">BSO</span>
             <span class="brand-mini-reg">®</span>
           </div>
-          <div class="profile-name">Alex Dimarco</div>
-          <button id="logoutButton" class="ghost-button" type="button">Log out</button>
+
+          <div class="profile-badge" aria-label="Account profile">
+            <div class="profile-avatar" aria-hidden="true">AD</div>
+            <div class="profile-meta">
+              <span class="profile-name">Alex Dimarco</span>
+              <small>Private client</small>
+            </div>
+          </div>
         </header>
 
         <section class="balance-card">
           <div class="card-header">
             <span class="label">Available balance</span>
-            <span class="status-pill">Active</span>
+            <span class="status-pill">On hold</span>
           </div>
           <h2>$7,000,000.00</h2>
           <div class="hold-row">
@@ -60,66 +40,73 @@
         <section class="actions-row" aria-label="Account actions">
           <button class="action-button disabled" type="button" disabled>
             <span>Add money</span>
-            <small>Disabled</small>
+            <small>On hold</small>
           </button>
           <button class="action-button action-secondary disabled" type="button" disabled>
             <span>Transfer</span>
-            <small>Disabled</small>
+            <small>On hold</small>
           </button>
         </section>
 
         <section class="content-grid">
-          <div class="panel">
+          <div class="panel activity-panel">
             <div class="panel-header">
               <h3>Recent activity</h3>
-              <span>Today</span>
             </div>
             <ul class="activity-list">
               <li>
                 <div>
                   <strong>Incoming transfer</strong>
-                  <small>••••••</small>
                 </div>
                 <span class="inflow">+$2,500,000.00</span>
               </li>
               <li>
                 <div>
-                  <strong>Outgoing payment</strong>
-                  <small>••••••</small>
+                  <strong>Outgoing transfer</strong>
                 </div>
                 <span class="outflow">-$120,000.00</span>
               </li>
               <li>
                 <div>
-                  <strong>Card settlement</strong>
-                  <small>••••••</small>
+                  <strong>Incoming transfer</strong>
                 </div>
-                <span class="outflow">-$30,000.00</span>
+                <span class="inflow">+$950,000.00</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Outgoing transfer</strong>
+                </div>
+                <span class="outflow">-$210,000.00</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Incoming transfer</strong>
+                </div>
+                <span class="inflow">+$380,000.00</span>
+              </li>
+              <li>
+                <div>
+                  <strong>Outgoing transfer</strong>
+                </div>
+                <span class="outflow">-$85,000.00</span>
               </li>
             </ul>
           </div>
 
-          <aside class="panel chat-panel">
-            <div class="panel-header">
-              <h3>Customer care</h3>
-              <span class="online-dot">Online</span>
+          <aside class="chat-popover" aria-label="Customer care chat popup">
+            <div class="chat-header">
+              <div class="chat-title-wrap">
+                <div class="chat-avatar">A</div>
+                <span class="chat-status-dot"></span>
+              </div>
+              <span class="chat-name">Customer care</span>
             </div>
 
-            <div id="chatMessages" class="chat-messages" aria-live="polite">
-              <div class="message bot">
-                <p>Hello Alex, how can we help you today?</p>
-              </div>
-              <div class="message user">
-                <p>I want to check my balance and hold details.</p>
-              </div>
-              <div class="message bot">
-                <p>Your current available balance is $7,000,000.00 and $1,250,000.00 is on hold.</p>
-              </div>
-            </div>
+            <div id="chatMessages" class="chat-body" aria-live="polite"></div>
 
-            <form id="chatForm" class="chat-form">
-              <input id="chatInput" type="text" placeholder="Type your message..." aria-label="Type your message" />
-              <button type="submit">Send</button>
+            <form id="chatForm" class="chat-form" aria-label="Customer care form">
+              <input id="chatInput" type="text" placeholder="Type here..." aria-label="Type a message" />
+              <button type="submit" aria-label="Send message">Send</button>
             </form>
           </aside>
         </section>
